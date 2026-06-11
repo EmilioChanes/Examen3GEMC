@@ -9,56 +9,74 @@
 
     <TextView
         android:id="@+id/tvwBienvenidx"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="¡Bienvenidx!"
-        android:textSize="38dp"
+        android:textSize="38sp"
+        app:layout_end_toEndOf="parent"
+        app:layout_start_toStartOf="parent"
+        app:layout_top_toTopOf="parent"
         tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="75dp" />
+        tools:layout_editor_absoluteY="98dp" />
 
     <EditText
         android:id="@+id/edtxNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
         android:hint="Nombre"
+        android:inputType="text"
+        app:layout_end_toEndOf="parent"
+        app:layout_start_toStartOf="parent"
+        app:layout_top_toBottomOf="@id/tvwBienvenidx"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="146dp" />
+        tools:layout_editor_absoluteY="180dp" />
 
     <EditText
         android:id="@+id/edtxContraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
         android:hint="Contraseña"
+        android:inputType="textPassword"
+        app:layout_end_toEndOf="parent"
+        app:layout_start_toStartOf="parent"
+        app:layout_top_toBottomOf="@id/edtxNombre"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="209dp" />
+        tools:layout_editor_absoluteY="252dp" />
 
     <Button
         android:id="@+id/btnIniciarSesión"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IniciarSesión"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="288dp" />
-
-    <Button
-        android:id="@+id/btnRegistrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrarse"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="400dp" />
+        android:text="Iniciar Sesión"
+        app:layout_end_toEndOf="parent"
+        app:layout_start_toStartOf="parent"
+        app:layout_top_toBottomOf="@id/edtxContraseña"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="328dp" />
 
     <TextView
         android:id="@+id/tvwNoTienesCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿No tienes cuenta?"
+        app:layout_end_toEndOf="parent"
+        app:layout_start_toStartOf="parent"
+        app:layout_top_toBottomOf="@id/btnIniciarSesión"
         tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="356dp" />
+        tools:layout_editor_absoluteY="482dp" />
+
+    <Button
+        android:id="@+id/btnRegistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        app:layout_end_toEndOf="parent"
+        app:layout_start_toStartOf="parent"
+        app:layout_top_toBottomOf="@id/tvwNoTienesCuenta"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="524dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
