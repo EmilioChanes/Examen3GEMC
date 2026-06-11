@@ -15,12 +15,10 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        // Enlazamos tus componentes usando tus IDs exactos del XML
         val edtxResNombre = findViewById<EditText>(R.id.edtxResNombre)
         val edtxResContraseña = findViewById<EditText>(R.id.edtxResContraseña)
         val btnResRegistrarse = findViewById<Button>(R.id.btnResRegistrarse)
 
-        // Obtenemos la instancia de la base de datos
         val db = AppDatabase.getDatabase(this)
 
         btnResRegistrarse.setOnClickListener {
@@ -32,17 +30,14 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Ejecutamos la inserción usando Corrutinas
             lifecycleScope.launch {
                 try {
-                    // Creamos el objeto Usuario (usando la clase del proyecto)
-                    val nuevoUsuario = Usuario(usuario = username, contrasenia = password)
+                    val nuevoUsuario = Usuario(usuario = username, contraseña = password)
 
-                    // Inserción limpia a través del DAO
                     db.userDao().registrarUsuario(nuevoUsuario)
 
                     Toast.makeText(this@SignUpActivity, "¡Usuario registrado con éxito!", Toast.LENGTH_SHORT).show()
-                    finish() // Regresa a la pantalla principal
+                    finish()
 
                 } catch (e: Exception) {
                     Toast.makeText(this@SignUpActivity, "Error al registrar: ${e.message}", Toast.LENGTH_SHORT).show()
